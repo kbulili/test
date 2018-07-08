@@ -1,24 +1,24 @@
-#include "DxLib.h"
+ï»¿#include "DxLib.h"
 #define PI 3.141592654
 #include"scenario.h"
 
-int Key[256]; // ƒL[‚ª‰Ÿ‚³‚ê‚Ä‚¢‚éƒtƒŒ[ƒ€”‚ğŠi”[‚·‚é
+int Key[256]; // ã‚­ãƒ¼ãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹ãƒ•ãƒ¬ãƒ¼ãƒ æ•°ã‚’æ ¼ç´ã™ã‚‹
 int i;
 int scene = 0;
 
 
 
 
-// ƒL[‚Ì“ü—Íó‘Ô‚ğXV‚·‚é
+// ã‚­ãƒ¼ã®å…¥åŠ›çŠ¶æ…‹ã‚’æ›´æ–°ã™ã‚‹
 int gpUpdateKey() {
-	char tmpKey[256]; // Œ»İ‚ÌƒL[‚Ì“ü—Íó‘Ô‚ğŠi”[‚·‚é
-	GetHitKeyStateAll(tmpKey); // ‘S‚Ä‚ÌƒL[‚Ì“ü—Íó‘Ô‚ğ“¾‚é
+	char tmpKey[256]; // ç¾åœ¨ã®ã‚­ãƒ¼ã®å…¥åŠ›çŠ¶æ…‹ã‚’æ ¼ç´ã™ã‚‹
+	GetHitKeyStateAll(tmpKey); // å…¨ã¦ã®ã‚­ãƒ¼ã®å…¥åŠ›çŠ¶æ…‹ã‚’å¾—ã‚‹
 	for (i = 0; i < 256; i++) {
-		if (tmpKey[i] != 0) { // i”Ô‚ÌƒL[ƒR[ƒh‚É‘Î‰‚·‚éƒL[‚ª‰Ÿ‚³‚ê‚Ä‚¢‚½‚ç
-			Key[i]++;     // ‰ÁZ
+		if (tmpKey[i] != 0) { // iç•ªã®ã‚­ãƒ¼ã‚³ãƒ¼ãƒ‰ã«å¯¾å¿œã™ã‚‹ã‚­ãƒ¼ãŒæŠ¼ã•ã‚Œã¦ã„ãŸã‚‰
+			Key[i]++;     // åŠ ç®—
 		}
-		else {              // ‰Ÿ‚³‚ê‚Ä‚¢‚È‚¯‚ê‚Î
-			Key[i] = 0;   // 0‚É‚·‚é
+		else {              // æŠ¼ã•ã‚Œã¦ã„ãªã‘ã‚Œã°
+			Key[i] = 0;   // 0ã«ã™ã‚‹
 		}
 	}
 	return 0;
@@ -37,7 +37,7 @@ int P_flag = 0;
 
 
 
-/*===== ‰æ‘œŠÖ˜AŠÖ” =====*/
+/*===== ç”»åƒé–¢é€£é–¢æ•° =====*/
 void gpCalc() {
 
 	if (Key[KEY_INPUT_X] >= 1) {
@@ -243,7 +243,7 @@ void gpDraw() {
 }
 
 
-/*===== ƒV[ƒ“‘JˆÚ =====*/
+/*===== ã‚·ãƒ¼ãƒ³é·ç§» =====*/
 /*----- menu -----*/
 void scene0() {
 
@@ -277,7 +277,7 @@ void scene0() {
 				menu = 0;
 			}
 
-			/*----- ƒJ[ƒ\ƒ‹‚ÌˆÚ“® -----*/
+			/*----- ã‚«ãƒ¼ã‚½ãƒ«ã®ç§»å‹• -----*/
 			if (save == 0) {
 				if (Key[KEY_INPUT_UP] && (P_flag == 0)) {
 					save = 3;
@@ -378,7 +378,7 @@ void scene1() {
 				menu = 0;
 			}
 
-			/*----- ƒJ[ƒ\ƒ‹‚ÌˆÚ“® -----*/
+			/*----- ã‚«ãƒ¼ã‚½ãƒ«ã®ç§»å‹• -----*/
 			if (save == 0) {
 				if (Key[KEY_INPUT_UP] && (P_flag == 0)) {
 					save = 3;
@@ -552,9 +552,9 @@ void scene2() {
 
 
 
-/*===== ƒƒCƒ“•¶ =====*/
+/*===== ãƒ¡ã‚¤ãƒ³æ–‡ =====*/
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
-	ChangeWindowMode(TRUE), DxLib_Init(), SetDrawScreen(DX_SCREEN_BACK); //ƒEƒBƒ“ƒhƒEƒ‚[ƒh•ÏX‚Æ‰Šú‰»‚Æ— ‰æ–Êİ’è
+	ChangeWindowMode(TRUE), DxLib_Init(), SetDrawScreen(DX_SCREEN_BACK); //ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰å¤‰æ›´ã¨åˆæœŸåŒ–ã¨è£ç”»é¢è¨­å®š
 
 
 	hai0 = LoadGraph("101.png");
@@ -582,9 +582,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 
 
-	// while(— ‰æ–Ê‚ğ•\‰æ–Ê‚É”½‰f, ƒƒbƒZ[ƒWˆ—, ‰æ–ÊƒNƒŠƒA, ƒL[‚ÌXV)
+	// while(è£ç”»é¢ã‚’è¡¨ç”»é¢ã«åæ˜ , ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å‡¦ç†, ç”»é¢ã‚¯ãƒªã‚¢, ã‚­ãƒ¼ã®æ›´æ–°)
 
 
-	DxLib_End(); // DXƒ‰ƒCƒuƒ‰ƒŠI—¹ˆ—
+	DxLib_End(); // DXãƒ©ã‚¤ãƒ–ãƒ©ãƒªçµ‚äº†å‡¦ç†
 	return 0;
 }
