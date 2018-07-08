@@ -1,4 +1,4 @@
-#include"Dxlib.h"
+ï»¿#include"Dxlib.h"
 int Green = GetColor(0, 255, 0);
 
 void mywait() {
@@ -9,7 +9,7 @@ void mywait() {
 }
 
 
-/*----- ƒVƒiƒŠƒIƒŠ[ƒ_[ -----*/
+/*----- ã‚·ãƒŠãƒªã‚ªãƒªãƒ¼ãƒ€ãƒ¼ -----*/
 
 void scenario_reader(int length, char text[]) {
 	int x_s = 300, y_s = 120;
@@ -21,7 +21,7 @@ void scenario_reader(int length, char text[]) {
 	}
 }
 
-/*----- ƒVƒiƒŠƒIƒŠ[ƒ_[ -----*/
+/*----- ã‚·ãƒŠãƒªã‚ªãƒªãƒ¼ãƒ€ãƒ¼ -----*/
 char A_1[] = "This is tests.";
 
 void scenario() {
